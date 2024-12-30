@@ -2,7 +2,7 @@ version: '3.8'
 services:
   mongo:
     image: mongo:latest
-    container_name: mongo_container
+    container_name: mongo_containers
     volumes:
       - mongo_data:/data/db
     ports:
@@ -10,7 +10,7 @@ services:
 
   api:
     build: ./api
-    container_name: api_container
+    container_name: api_containers
     ports:
       - "5001:5001"
     depends_on:
@@ -23,7 +23,7 @@ services:
 
   client:
     build: ./client
-    container_name: client_container
+    container_name: client_containers
     ports:
       - "3003:3003"
     depends_on:
